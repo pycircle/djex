@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}lista postów{% endblock%}
+{% block content %}
+
+{% if not posts %}
+<p>Brak postów. </p>
+{% else %}
+<ul>
+{% for post in posts %}
+    <li><a href="{% url 'post_detail' pk=post.pk %}">{{ post }}</a></li>
+{% endfor %}
+</ul>
+
+{% endif %}
+<a href="{% url 'post_create' %}">Dodaj post</a>
+{% endblock %}
