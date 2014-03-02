@@ -1,0 +1,4 @@
+djex
+====
+
+example django project
